@@ -1,0 +1,261 @@
+// Modern SaaS Console theme layer.
+// Keep this file token-driven so page components stay simple and consistent.
+
+:root {
+  --art-text-primary: #172033;
+  --art-text-secondary: #536079;
+  --art-text-tertiary: #758096;
+  --art-surface-base: #f5f7fb;
+  --art-surface-panel: #ffffff;
+  --art-surface-subtle: #f8fafc;
+  --art-surface-muted: #eef2f7;
+  --art-border-subtle: #e5ebf2;
+  --art-border-strong: #d7e0ea;
+  --art-shadow-panel: 0 1px 2px rgb(15 23 42 / 4%);
+  --art-shadow-popover: 0 18px 48px rgb(15 23 42 / 10%);
+  --art-focus-ring: color-mix(in srgb, var(--theme-color) 68%, white);
+
+  --default-bg-color: var(--art-surface-base);
+  --default-box-color: var(--art-surface-panel);
+  --art-card-border: rgb(15 23 42 / 8%);
+  --default-border: var(--art-border-subtle);
+  --default-border-dashed: var(--art-border-strong);
+  --art-hover-color: #eef4fb;
+  --art-active-color: #e8f1fb;
+  --art-el-active-color: #edf4fc;
+
+  --el-bg-color: var(--art-surface-panel);
+  --el-bg-color-overlay: var(--art-surface-panel);
+  --el-fill-color-blank: var(--art-surface-panel);
+  --el-fill-color-light: var(--art-surface-subtle);
+  --el-fill-color-lighter: var(--art-surface-muted);
+  --el-border-color: var(--art-border-subtle);
+  --el-border-color-light: var(--art-border-subtle);
+  --el-border-color-lighter: #edf2f7;
+  --el-text-color-primary: var(--art-text-primary);
+  --el-text-color-regular: var(--art-text-secondary);
+  --el-text-color-secondary: var(--art-text-tertiary);
+  --el-table-bg-color: var(--art-surface-panel);
+  --el-table-tr-bg-color: var(--art-surface-panel);
+  --el-table-header-bg-color: var(--art-surface-subtle);
+  --el-table-row-hover-bg-color: #f1f6fd;
+  --el-table-border-color: var(--art-border-subtle);
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --art-text-primary: #e7edf7;
+  --art-text-secondary: #aeb9ca;
+  --art-text-tertiary: #8792a6;
+  --art-surface-base: #0b111d;
+  --art-surface-panel: #151d2b;
+  --art-surface-subtle: #1a2434;
+  --art-surface-muted: #202c3f;
+  --art-border-subtle: rgb(255 255 255 / 9%);
+  --art-border-strong: rgb(255 255 255 / 14%);
+  --art-shadow-panel: 0 1px 2px rgb(0 0 0 / 18%);
+  --art-shadow-popover: 0 22px 52px rgb(0 0 0 / 36%);
+  --art-focus-ring: color-mix(in srgb, var(--theme-color) 76%, white);
+
+  --default-bg-color: var(--art-surface-base);
+  --default-box-color: var(--art-surface-panel);
+  --art-card-border: var(--art-border-subtle);
+  --default-border: var(--art-border-subtle);
+  --default-border-dashed: var(--art-border-strong);
+  --art-hover-color: #202c3f;
+  --art-active-color: #26364d;
+  --art-el-active-color: #223047;
+
+  --el-bg-color: var(--art-surface-panel);
+  --el-bg-color-overlay: var(--art-surface-panel);
+  --el-fill-color-blank: var(--art-surface-panel);
+  --el-fill-color-light: var(--art-surface-subtle);
+  --el-fill-color-lighter: var(--art-surface-muted);
+  --el-border-color: var(--art-border-subtle);
+  --el-border-color-light: var(--art-border-subtle);
+  --el-border-color-lighter: rgb(255 255 255 / 7%);
+  --el-text-color-primary: var(--art-text-primary);
+  --el-text-color-regular: var(--art-text-secondary);
+  --el-text-color-secondary: var(--art-text-tertiary);
+  --el-table-bg-color: var(--art-surface-panel);
+  --el-table-tr-bg-color: var(--art-surface-panel);
+  --el-table-header-bg-color: var(--art-surface-subtle);
+  --el-table-row-hover-bg-color: #223047;
+  --el-table-border-color: var(--art-border-subtle);
+}
+
+body {
+  color: var(--art-text-primary);
+  background: var(--default-bg-color);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+.app-layout {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--theme-color) 4%, transparent),
+      transparent 240px
+    ),
+    var(--default-bg-color) !important;
+}
+
+#app-header > div {
+  background: color-mix(in srgb, var(--default-box-color) 92%, transparent) !important;
+  border-bottom: 1px solid var(--art-border-subtle);
+  box-shadow: var(--art-shadow-panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.layout-sidebar {
+  background: var(--default-box-color);
+  border-right-color: var(--art-border-subtle) !important;
+}
+
+.art-card,
+.art-card-sm,
+.art-card-xs,
+.page-content,
+.art-table-card,
+.el-card {
+  background: var(--default-box-color) !important;
+  border: 1px solid var(--art-card-border) !important;
+  box-shadow: var(--art-shadow-panel) !important;
+}
+
+.art-card,
+.page-content,
+.art-table-card,
+.el-card {
+  border-radius: 10px !important;
+}
+
+.art-card-sm {
+  border-radius: 8px !important;
+}
+
+.art-card-xs {
+  border-radius: 6px !important;
+}
+
+.art-card-header {
+  .title {
+    h4 {
+      color: var(--art-text-primary) !important;
+      font-weight: 650;
+    }
+
+    p {
+      color: var(--art-text-secondary) !important;
+    }
+  }
+}
+
+.el-card__body {
+  color: var(--art-text-primary);
+}
+
+.el-button:not(.el-button--primary) {
+  color: var(--art-text-primary);
+  background: var(--art-surface-panel);
+  border-color: var(--art-border-subtle);
+}
+
+.el-button:not(.el-button--primary):hover,
+.el-input__wrapper:hover,
+.el-select__wrapper:hover {
+  border-color: color-mix(in srgb, var(--theme-color) 34%, var(--art-border-subtle));
+}
+
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__inner {
+  background: var(--art-surface-panel) !important;
+  border-color: var(--art-border-subtle) !important;
+  box-shadow: 0 0 0 1px var(--art-border-subtle) inset !important;
+}
+
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused,
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px var(--theme-color) inset !important;
+}
+
+.el-dropdown__popper,
+.el-select__popper,
+.el-popover.el-popper,
+.el-picker__popper,
+.el-dialog,
+.el-message {
+  background: var(--art-surface-panel) !important;
+  border: 1px solid var(--art-border-subtle) !important;
+  box-shadow: var(--art-shadow-popover) !important;
+}
+
+.art-table-card {
+  .el-card__body {
+    padding: 18px !important;
+  }
+}
+
+.art-table {
+  .el-table {
+    overflow: hidden;
+    color: var(--art-text-primary);
+    background: var(--art-surface-panel) !important;
+    border: 1px solid var(--art-border-subtle);
+    border-radius: 8px;
+  }
+
+  .el-table__inner-wrapper::before,
+  .el-table__border-left-patch {
+    background-color: var(--art-border-subtle) !important;
+  }
+
+  .el-table th.el-table__cell {
+    color: var(--art-text-secondary);
+    font-weight: 650;
+    background: var(--el-table-header-bg-color) !important;
+  }
+
+  .el-table td.el-table__cell {
+    color: var(--art-text-primary);
+    background: var(--el-table-tr-bg-color) !important;
+  }
+
+  .el-table__body tr:hover > td.el-table__cell {
+    background: var(--el-table-row-hover-bg-color) !important;
+  }
+
+  .el-table .cell {
+    min-width: 0;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .el-loading-mask {
+    background: color-mix(in srgb, var(--art-surface-panel) 88%, transparent) !important;
+  }
+}
+
+.el-tooltip__trigger:focus-visible,
+.el-button:focus-visible,
+.el-dropdown:focus-visible,
+.el-input__wrapper:focus-within,
+.el-select__wrapper:focus-within {
+  outline: 2px solid var(--art-focus-ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

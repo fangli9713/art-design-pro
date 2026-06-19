@@ -36,10 +36,10 @@
         .page-content {
           position: relative;
           box-sizing: border-box;
-          padding: 20px;
+          padding: 18px;
           overflow: hidden;
           background: var(--default-box-color);
-          border-radius: calc(var(--custom-radius) / 2 + 2px) !important;
+          border-radius: 10px !important;
         }
       }
     }

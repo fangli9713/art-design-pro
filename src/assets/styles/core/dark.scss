@@ -7,6 +7,8 @@ $font-color: rgba(#ffffff, 0.85);
 
 /* 覆盖element-plus默认深色背景色 */
 html.dark {
+  color-scheme: dark;
+
   // element-plus
   --el-bg-color: var(--default-box-color);
   --el-text-color-regular: #{$font-color};
@@ -15,7 +17,7 @@ html.dark {
   // 工具栏背景颜色
   --w-e-toolbar-bg-color: #18191c;
   // 输入区域背景颜色
-  --w-e-textarea-bg-color: #090909;
+  --w-e-textarea-bg-color: var(--default-box-color);
   // 工具栏文字颜色
   --w-e-toolbar-color: var(--art-gray-600);
   // 选中菜单颜色
@@ -27,9 +29,9 @@ html.dark {
   // 链接输入框边框颜色
   --w-e-modal-button-border-color: var(--default-border-dashed);
   // 表格头颜色
-  --w-e-textarea-slight-bg-color: #090909;
+  --w-e-textarea-slight-bg-color: var(--art-surface-subtle);
   // 按钮背景颜色
-  --w-e-modal-button-bg-color: #090909;
+  --w-e-modal-button-bg-color: var(--default-box-color);
   // hover toolbar 背景颜色
   --w-e-toolbar-active-color: var(--art-gray-800);
 }
@@ -66,7 +68,7 @@ html.dark {
   .w-e-select-list ul li:hover,
     /* 工具栏 hover 按钮背景颜色 */
     .w-e-bar-item button:hover {
-    background-color: #090909 !important;
+    background-color: var(--art-hover-color) !important;
   }
 
   /* 代码块 */

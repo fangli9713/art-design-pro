@@ -17,15 +17,15 @@
   --art-danger: oklch(0.68 0.22 25.3);
 
   /* Gray Scale - Light Mode */
-  --art-gray-100: #f9fafb;
-  --art-gray-200: #f2f4f5;
-  --art-gray-300: #e6eaeb;
-  --art-gray-400: #dbdfe1;
-  --art-gray-500: #949eb7;
-  --art-gray-600: #7987a1;
-  --art-gray-700: #4d5875;
-  --art-gray-800: #383853;
-  --art-gray-900: #323251;
+  --art-gray-100: #f8fafc;
+  --art-gray-200: #f1f5f9;
+  --art-gray-300: #e2e8f0;
+  --art-gray-400: #cbd5e1;
+  --art-gray-500: #64748b;
+  --art-gray-600: #475569;
+  --art-gray-700: #334155;
+  --art-gray-800: #1f2937;
+  --art-gray-900: #111827;
 
   /* Border Colors */
   --art-card-border: rgba(0, 0, 0, 0.08);
@@ -50,7 +50,7 @@
 /* ==================== Dark Mode Variables ==================== */
 .dark {
   /* Base Colors */
-  --art-color: #000000;
+  --art-color: #0b111d;
 
   /* Gray Scale - Dark Mode */
   --art-gray-100: #110f0f;
@@ -70,8 +70,8 @@
   --default-border-dashed: #363843;
 
   /* Background Colors */
-  --default-bg-color: #070707;
-  --default-box-color: #161618;
+  --default-bg-color: #0b111d;
+  --default-box-color: #151d2b;
 
   /* Hover Color */
   --art-hover-color: #252530;
@@ -151,11 +151,15 @@
 
   /* Transition Utilities */
   .tad-200 {
-    @apply transition-all duration-200;
+    transition-duration: 200ms;
+    transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .tad-300 {
-    @apply transition-all duration-300;
+    transition-duration: 300ms;
+    transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Border Utilities */
